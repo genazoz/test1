@@ -1,0 +1,33 @@
+input:not([type="checkbox"]):not([type="radio"]), textarea
+  padding: 13px 0
+
+  +hoves(r)
+  +yo('font-size', (375px: 16px, 1920px: 18px))
+  line-height: 100%
+  color: $black
+
+  border-bottom: 1px solid rgba(#0C1D39, .5)
+  outline: none
+
+  &.issue
+    background: transparent
+    border-color: #AC1B4E
+
+    animation: blink-input-issue 2s forwards
+
+
+  @keyframes blink-input-issue
+    0%
+      border-color: rgba(#0C1D39, .5)
+    10%
+      border-color: rgba(#0C1D39, .5)
+    50%
+      border-color: #AC1B4E
+    100%
+      border-color: rgba(#0C1D39, .5)
+
+
+  &::placeholder
+    +hoves(l)
+    color: rgba(#0C1D39, 0.5)
+

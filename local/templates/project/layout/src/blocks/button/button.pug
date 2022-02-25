@@ -1,0 +1,43 @@
+mixin btn(text = 'Кнопка')
+  button(class="btn")
+    span.btn__bg
+    span.btn__text= text
+
+mixin btn-icon(text = 'Кнопка', icon, theme='white', tag="button")
+  if(tag === 'button')
+    button.btn-icon(class=`btn-icon--${theme}`)&attributes(attributes)
+      span.btn-icon__text !{text}
+      span.btn-icon__circle
+        +svg(icon)
+  if(tag === 'a')
+    a.btn-icon(class=`btn-icon--${theme}` href="javascript:void(0)")&attributes(attributes)
+      span.btn-icon__circle
+        +svg(icon)
+      span.btn-icon__text !{text}
+  if(tag === 'div')
+    .btn-icon(class=`btn-icon--${theme}`)&attributes(attributes)
+      span.btn-icon__circle
+        +svg(icon)
+      span.btn-icon__text !{text}
+
+mixin btn-icon-b(text = 'Кнопка', icon, theme='white', tag="button")
+  if(tag === 'button')
+    button.btn-icon-b(class=`btn-icon-b--${theme}`)&attributes(attributes)
+      span.btn-icon-b__text !{text}
+      span.btn-icon-b__circle
+        +svg(icon)
+  if(tag === 'a')
+    a.btn-icon-b(class=`btn-icon-b--${theme}` href="javascript:void(0)")&attributes(attributes)
+      span.btn-icon-b__text !{text}
+      span.btn-icon-b__circle
+        +svg(icon)
+  if(tag === 'div')
+    .btn-icon-b(class=`btn-icon-b--${theme}`)&attributes(attributes)
+      span.btn-icon-b__text !{text}
+      span.btn-icon-b__circle
+        +svg(icon)
+
+mixin btn-arrow(data)
+  button(class=`btn-arrow ${data.class ? data.class : null}`)
+    span.btn__text
+    +svg('arrow-bottom-a')

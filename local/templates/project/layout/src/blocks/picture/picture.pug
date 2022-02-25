@@ -1,0 +1,10 @@
+mixin picture(imgWebp, img, lazy)
+  picture&attributes(attributes)
+    if lazy
+      source(type="image/webp" data-srcset=`assets/img/webp/${imgWebp}`)
+      source(type="image/jpeg" data-srcset=`assets/img/${img}`)
+      img(class=`lazy lazyload` data-src=`assets/img/${img}` alt="")
+    else
+      source(type="image/webp" srcset=`assets/img/webp/${imgWebp}`)
+      source(type="image/jpeg" srcset=`assets/img/${img}.`)
+      img(src=`assets/img/${img}` alt="")

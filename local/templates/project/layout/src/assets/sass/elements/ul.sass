@@ -1,0 +1,23 @@
+ul.ul
+  li
+    display: flex
+    &:not(:last-child)
+      +yo('margin-bottom', (320px: 18px, 1920px: 20px))
+
+    +hoves(r)
+    +yo('font-size', (320px: 16px, 1920px: 20px))
+    +yo('line-height', (320px: 25px, 1920px: 28px))
+    color: rgba(#0C1D39, .8)
+
+    &::before
+      content: ''
+
+      position: relative
+
+      display: flex
+      flex-shrink: 0
+      width: 8px
+      height: 8px
+      margin: 11px 18px 0 0
+
+      background: $d-blue

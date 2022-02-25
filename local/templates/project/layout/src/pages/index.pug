@@ -1,0 +1,29 @@
+extends ../templates/template.pug
+
+block content
+  section.s-garden.container
+    +picture('background.webp', 'background.png', true)(width="700px" height="700px").s-garden__background
+    +picture('background.webp', 'background.png', true)(width="700px" height="700px").s-garden__background.s-garden__background--blur
+    h1.s-garden__title Яблочный сад
+      span JS
+    ul
+      li Реализовать объектную модель: Яблоко, Дерево, Сад.
+      li Цель: оценить умение проектирования и реализации объектных моделей.
+      li Язык: нативный js.
+    +btn-icon('Следующий День', 'arrow-right-a', 'yellow').s-garden__button
+    .info-list.s-garden__info-list
+      .info-list__item
+        h6.info-list__item-title.garden-age 0
+        .info-list__item-text возраст сада
+      .info-list__item
+        h6.info-list__item-title.trees-count 0
+        .info-list__item-text деревьев
+      .info-list__item
+        h6.info-list__item-title.apples-count 0
+        .info-list__item-text висящих яблок
+      .info-list__item
+        h6.info-list__item-title.fallen-apples 0
+        .info-list__item-text упавших яблок
+      .info-list__item
+        h6.info-list__item-title.spoiled-apples 0
+        .info-list__item-text испорченных яблок

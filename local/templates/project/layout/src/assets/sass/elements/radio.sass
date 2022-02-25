@@ -1,0 +1,71 @@
+input[type="radio"]
+  --active: #006EAD
+  --active-inner: transparent
+  --input-border: #9C9C9C
+  --input-border-hover: #FFFFFF
+  --background: transparent
+  --disabled: #F5F9FF
+  --disabled-inner: #E4ECFA
+
+  position: relative
+
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  width: 20px
+  height: 20px
+  margin: 0
+  padding: 0
+
+  cursor: pointer
+  outline: none
+  box-shadow: none
+  border: 1px solid var(--input-border)
+  background: var(--background)
+  appearance: none
+  -webkit-tap-highlight-color: transparent
+  -webkit-appearance: none
+
+  transition: background-color 0.3s ease, border-color 0.3s ease
+
+  &:after
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.33455 9.31771L3.40677 7.38993C3.1901 7.17326 2.8401 7.17326 2.62344 7.38993C2.40677 7.6066 2.40677 7.9566 2.62344 8.17326L4.94566 10.4955C5.16233 10.7122 5.51233 10.7122 5.72899 10.4955L11.6068 4.61771C11.8234 4.40104 11.8234 4.05104 11.6068 3.83437C11.3901 3.61771 11.0401 3.61771 10.8234 3.83437L5.33455 9.31771Z" fill="white"/></svg>')
+
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 13px
+    height: 13px
+    padding-top: 1px
+
+    opacity: 0
+
+  &:checked
+    background: var(--active)
+    border: 1px solid var(--input-border-hover)
+
+    &:after
+      transition: opacity 0.1s ease
+
+      transform: 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2)
+
+
+  &:disabled
+    cursor: not-allowed
+    opacity: 0.7
+    background: var(--disabled)
+
+    &:checked
+      background: var(--disabled-inner)
+      border-color: var(--input-border)
+
+
+  &:not(.switch)
+    &:after
+      opacity: 0
+
+
+    &:checked
+      &:after
+        opacity: 1

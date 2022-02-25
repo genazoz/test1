@@ -1,0 +1,3 @@
+mixin svg(name)
+  if name
+    svg&attributes(attributes)(class=`i-${name}`): use(xlink:href=`#i-${name}`)
